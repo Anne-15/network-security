@@ -23,3 +23,9 @@ def sign(privateKey, data):
 def verify(publicKey, data, sign):
     return publicKey.verify(data, (int(base64.b64encode(sign)),))
 
+def main():
+    privateKey, publicKey = keys()
+    # generating keys
+    text = b"Hello Sam" #text to encrypt
+    cipher = encrypt(publicKey,text)
+    print(cipher)
